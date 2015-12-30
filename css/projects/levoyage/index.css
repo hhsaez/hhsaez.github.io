@@ -5,7 +5,7 @@ body {
 }
 
 .content {
-	background-image: url('../img/title_card.jpg');
+	background-image: url('../../../img/projects/levoyage/title_card.jpg');
 	background-repeat: no-repeat;
 	width: 1024px;
 	height: 768px;
@@ -14,7 +14,7 @@ body {
 }
 
 .header-title {
-	background-image: url('../img/header_title.png');
+	background-image: url('../../../img/projects/levoyage/header_title.png');
 	background-repeat: no-repeat;
 	width: 784px;
 	height: 202px;
@@ -22,7 +22,7 @@ body {
 }
 
 .header-subtitle {
-	background-image: url('../img/header_subtitle.png');
+	background-image: url('../../../img/projects/levoyage/header_subtitle.png');
 	background-repeat: no-repeat;
 	width: 525px;
 	height: 61px;
