@@ -1,0 +1,68 @@
+body {
+	background-color: black;
+
+	color: white;
+}
+
+.content {
+	background-image: url('../img/title_card.jpg');
+	background-repeat: no-repeat;
+	width: 1024px;
+	height: 768px;
+	margin: auto;
+	padding-top: 70px;
+}
+
+.header-title {
+	background-image: url('../img/header_title.png');
+	background-repeat: no-repeat;
+	width: 784px;
+	height: 202px;
+	margin: 0 auto 0 auto;
+}
+
+.header-subtitle {
+	background-image: url('../img/header_subtitle.png');
+	background-repeat: no-repeat;
+	width: 525px;
+	height: 61px;
+	margin: 0 auto 50px auto;
+}
+
+.long-description {
+	width: 50%;
+	margin: 0 auto 0 auto;
+	text-align: center;
+	font-size: 1em;
+	font: 16px "Open Sans", sans-serif;
+}
+
+.availability {
+	width: 30%;
+	margin: 30px auto 0 auto;
+	text-align: center;
+	font: 16px "Open Sans", sans-serif;
+}
+
+.screenshots {
+	width: 680px;
+	margin: 20px auto 20px auto;
+}
+
+.screenshots img {
+	width: 128px;
+	height: 96px;
+	border: 1px white solid;
+}
+
+.btn-facebook {
+	float: right;
+	position: relative;
+	bottom: 70px;
+	right: 100px;
+}
+
+.btn-facebook img {
+	width: 64px;
+	height: 64px;
+}
