@@ -8,7 +8,7 @@ body {
 	background-image: url('../../../img/projects/levoyage/background_header.jpg');
 	background-repeat: no-repeat;
 	width: 1024px;
-	height: 270px;
+	height: 350px;
 	margin: auto;
 	padding-top: 70px;
 	overflow: hidden;
@@ -42,6 +42,7 @@ body {
 	width: 640px;
 	border: 1px solid white;
 	margin: auto;
+	overflow: hidden;
 }
 
 .long-description {
@@ -84,7 +85,6 @@ body {
 .btn-facebook {
 	float: right;
 	position: relative;
-	top: 50px;
 	right: 100px;
 }
 
