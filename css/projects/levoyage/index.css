@@ -4,13 +4,14 @@ body {
 	color: white;
 }
 
-.content {
-	background-image: url('../../../img/projects/levoyage/title_card.jpg');
+.header {
+	background-image: url('../../../img/projects/levoyage/background_header.jpg');
 	background-repeat: no-repeat;
 	width: 1024px;
-	height: 768px;
+	height: 270px;
 	margin: auto;
 	padding-top: 70px;
+	overflow: hidden;
 }
 
 .header-title {
@@ -29,9 +30,23 @@ body {
 	margin: 0 auto 50px auto;
 }
 
+.content {
+	background-image: url('../../../img/projects/levoyage/background_content.jpg');
+	background-repeat: repeat-y;
+	width: 1024px;
+	margin: auto;
+	padding: 70px 0 70px 0;
+}
+
+.trailer {
+	width: 640px;
+	border: 1px solid white;
+	margin: auto;
+}
+
 .long-description {
 	width: 50%;
-	margin: 0 auto 0 auto;
+	margin: 50px auto 50px auto;
 	text-align: center;
 	font-size: 1em;
 	font: 16px "Open Sans", sans-serif;
@@ -55,10 +70,21 @@ body {
 	border: 1px white solid;
 }
 
+.footer {
+	background-image: url('../../../img/projects/levoyage/background_footer.jpg');
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	width: 1024px;
+	height: 200px;
+	margin: auto;
+	padding: 0;
+	overflow: hidden;
+}
+
 .btn-facebook {
 	float: right;
 	position: relative;
-	bottom: 70px;
+	top: 50px;
 	right: 100px;
 }
 
@@ -66,3 +92,4 @@ body {
 	width: 64px;
 	height: 64px;
 }
+
