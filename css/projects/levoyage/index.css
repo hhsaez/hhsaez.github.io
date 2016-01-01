@@ -35,7 +35,16 @@ body {
 	background-repeat: repeat-y;
 	width: 1024px;
 	margin: auto;
-	padding: 70px 0 70px 0;
+	padding: 70px 0 0 0;
+}
+
+.icon {
+	background-image: url('../../../img/projects/levoyage/iTunesArtwork@2x.png');
+	background-size: 128px;
+	background-repeat: no-repeat;
+	width: 128px;
+	height: 128px;
+	margin: 70px auto 0 auto;
 }
 
 .trailer {
@@ -78,7 +87,7 @@ body {
 	width: 1024px;
 	height: 200px;
 	margin: auto;
-	padding: 0;
+	padding: 40px 0 0 0;
 	overflow: hidden;
 }
 
