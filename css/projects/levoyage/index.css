@@ -69,6 +69,15 @@ body {
 	font: 16px "Open Sans", sans-serif;
 }
 
+.coming-soon {
+	margin-top: 10px;
+}
+
+.available-ios {
+	width: 270px;
+	height: 80px;
+}
+
 .screenshots {
 	width: 680px;
 	margin: 20px auto 20px auto;
