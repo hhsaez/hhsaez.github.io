@@ -1,0 +1,51 @@
+.header {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.avatar {
+	width: 100%;
+	float: left;
+}
+
+.project-thumb {
+	width: 342px;
+	height: 256px;
+	overflow: hidden;
+	background-position: center;
+}
+
+.crimild-thumb {
+	background-image: url( "../img/thumb-crimild.jpg" );
+}
+
+.le-voyage-thumb {
+	background-image: url( "../img/thumb-le-voyage.jpg" );
+}
+
+.the-purge-protocol-thumb {
+	background-image: url( "../img/thumb-the-purge-protocol.jpg" );
+}
+
+.nino-de-cobre-thumb {
+	background-image: url( "../img/thumb-nino-de-cobre.jpg" );
+}
+
+.dogfighter-thumb {
+	background-image: url( "../img/thumb-dogfighter-ios.jpg" );
+}
+
+.revancha-zombie-thumb {
+	background-image: url( "../img/thumb-revancha-zombie.jpg" );
+}
+
+.icon-social {
+	height: 32px;
+	margin: 20px;
+}
+
+footer p {
+	text-align: center;
+}
+
+
