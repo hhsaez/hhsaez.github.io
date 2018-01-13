@@ -1,11 +1,17 @@
 .header {
 	background-color: #000000;
 	color: #ffffff;
+	padding: 2rem 0 2rem 0;
+	margin-bottom: 1rem;
 }
 
 .avatar {
 	width: 100%;
 	float: left;
+}
+
+.project-description {
+	margin-top: 1rem;
 }
 
 .project-thumb {
