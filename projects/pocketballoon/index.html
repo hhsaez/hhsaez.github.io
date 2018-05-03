@@ -27,22 +27,53 @@
 
         <link rel="stylesheet" href="../../css/projects/pocketballoon/index.css" />
         <link rel="shortcut icon" href="../../img/projects/pocketballoon/favicon.ico">
+
+        <script>
+            window.onload = function () {
+                var parallaxBox = document.getElementById( 'parallax' );
+                var c1left = document.getElementById ( 'layer1' ).offsetLeft,
+                    c1top = document.getElementById ( 'layer1' ).offsetTop,
+                    c2left = document.getElementById ( 'layer2' ).offsetLeft,
+                    c2top = document.getElementById ( 'layer2' ).offsetTop,
+                    c3left = document.getElementById ( 'layer3' ).offsetLeft,
+                    c3top = document.getElementById ( 'layer3' ).offsetTop;
+
+                parallaxBox.onmousemove = function ( event ) {
+                    event = event || window.event;
+                    var x = event.clientX - parallaxBox.offsetLeft,
+                    y = event.clientY - parallaxBox.offsetTop;
+    
+                    mouseParallax( 'layer1', c1left, c1top, x, y, 5 );
+                    mouseParallax( 'layer2', c2left, c2top, x, y, 15 );
+                    mouseParallax( 'layer3', c3left, c3top, x, y, 30 );
+                }
+            }
+
+            function mouseParallax ( id, left, top, mouseX, mouseY, speed ) {
+                var obj = document.getElementById ( id );
+                var parentObj = obj.parentNode,
+                containerWidth = parseInt( parentObj.offsetWidth ),
+                containerHeight = parseInt( parentObj.offsetHeight );
+                obj.style.left = left - ( ( ( mouseX - ( parseInt( obj.offsetWidth ) / 2 + left ) ) / containerWidth ) * speed ) + 'px';
+                obj.style.top = top - ( ( ( mouseY - ( parseInt( obj.offsetHeight ) / 2 + top ) ) / containerHeight ) * speed ) + 'px';
+            }
+        </script>
 	</head>
 
 	<body>
-		<div class="header">
-            <div class="cloud-back">
-                <div class="cloud-front">
-                    <div class="balloon-title"></div>
-                </div>
+		<div class="header" id="parallax">
+            <div class="layer" id="layer1">
+                <div id="cloud-back">&nbsp;</div>
+            </div>
+            <div class="layer" id="layer2">
+                <div id="cloud-front">&nbsp;</div>
+            </div>
+            <div class="layer" id="layer3">
+                <div id="balloon">&nbsp;</div>
             </div>
 		</div>
 
 		<div class="content">
-
-			<div class="credits">
-                <p><a href="http://hhsaez.com">By H. Hernán Saez</a></p>
-            </div>
 
             <div class="trailer">
                 <iframe width="640" height="360" src="https://www.youtube.com/embed/7gHT5zcbWAY" frameborder="0" allowfullscreen></iframe>
@@ -83,7 +114,8 @@
 				</div>
 			</div>
 
-			<div class="icon"></div>			
+            <div class="icon"></div>
+            			
 			<div class="availability">
 				<div>
 					<a href="https://itunes.apple.com/us/app/le-voyage/id1067434255?ls=1&mt=8">
@@ -92,11 +124,14 @@
 				</div>
 			</div>
 
-		</div>
+			<div class="credits">
+                <p><a href="http://hhsaez.com">Created by H. Hernán Saez</a></p>
+            </div>
+        </div>
 
 		<div class="footer">
 			<div class="btn-facebook">
-				<a href="https://facebook.com/LeVoyageGame" target="blank"><img src="../../img/projects/levoyage/btn_facebook.png"></img></a>
+				<a href="https://facebook.com/PocketBalloon" target="blank"><img src="../../img/projects/levoyage/btn_facebook.png"></img></a>
 			</div>
 		</div>
 
