@@ -6,22 +6,56 @@ body {
 	color: #AA512F;
 }
 
+h1 {
+	font: 2em "HelveticaNeue-Bold", sans-serif;	
+	margin: 0 0 30px 0;
+}
+
 .header {
     background-color: #DDBC89;
 	width: 1024px;
-	height: 500px;
+	height: 550px;
 	margin: auto;
-	padding-top: 70px;
+	padding-top: 20px;
     overflow: hidden;
     z-index: 0;
     position: relative;
 }
 
-.header .layer {
+.header .availability {
+	width: 30%;
+	position: absolute;
+	margin: 0 0 0 0;
+	overflow: hidden;
+}
+
+.header .cover {
+	padding-top: 50px;
+}
+
+.header .cover .layer {
     height: 100%;
     width: 100%;
     position: absolute;
     display: block;
+}
+
+.header .social {
+	float: right;	
+	margin: 24px 20px 0 0;
+}
+
+.header .social .button {
+	position: relative;
+	display: inline;
+	fill: #AA512F;	
+	color: #AA512F;		
+}
+
+.header .social .button img {
+	width: 32px;
+	height: 32px;	
+	margin: 0 5px 0 5px;
 }
 
 #layer1 {
@@ -61,34 +95,33 @@ body {
     padding: 10px 0 0 0;
 }
 
-.icon {
-	background-image: url('../../../img/projects/pocketballoon/iTunesArtwork@2x.png');
-	background-size: 128px;
-	background-repeat: no-repeat;
-	width: 128px;
-	height: 128px;
-	margin: 50px auto 50px auto;
-}
-
 .trailer {
 	width: 640px;
 	margin: auto;
 	overflow: hidden;
+	text-align: center;
 }
 
-.long-description {
+.text {
 	width: 50%;
-	margin: 50px auto 50px auto;
 	text-align: center;
 	font-size: 1em;
-	font: 16px "Open Sans", sans-serif;
+	font: 16px "HelveticaNeue-Bold", sans-serif;
+}
+
+.overview {
+	margin: 0 auto 50px auto;
+}
+
+.description {
+	margin: 50px auto 50px auto;
 }
 
 .availability {
 	width: 30%;
 	margin: 30px auto 30px auto;
 	text-align: center;
-	font: 16px "Open Sans", sans-serif;
+	font: 16px "HelveticaNeue-Bold", sans-serif;
 }
 
 .content .credits {
@@ -114,14 +147,30 @@ body {
 }
 
 .screenshots {
+	text-align: center;
 	width: 680px;
 	margin: 20px auto 20px auto;
 }
 
 .screenshots img {
 	width: 128px;
-	height: 96px;
-	border: 1px white solid;
+	height: 256px;
+	border: 1px #ece7cf solid;
+	object-fit: contain;
+}
+
+.outro {
+	text-align: center;
+	padding: 20px 0 0 0;
+}
+
+.outro .icon {
+	background-image: url('../../../img/projects/pocketballoon/iTunesArtwork@2x.png');
+	background-size: 128px;
+	background-repeat: no-repeat;
+	width: 128px;
+	height: 128px;
+	margin: 20px auto 50px auto;
 }
 
 .footer {
@@ -133,14 +182,21 @@ body {
 	overflow: hidden;
 }
 
-.btn-facebook {
-	float: right;
-	position: relative;
-	right: 100px;
+.footer .social {
+	margin: 0 auto 0 auto;
+	width: 370px;
 }
 
-.btn-facebook img {
-	width: 64px;
-	height: 64px;
+.footer .social .button {
+	position: relative;
+	display: inline;
+	fill: #AA512F;	
+	color: #AA512F;		
+}
+
+.footer .social .button img {
+	width: 48px;
+	height: 48px;	
+	margin: 0 20px 0 20px;
 }
 
