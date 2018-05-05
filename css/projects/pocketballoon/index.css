@@ -95,26 +95,28 @@ h1 {
     padding: 10px 0 0 0;
 }
 
-.trailer {
-	width: 640px;
-	margin: auto;
-	overflow: hidden;
-	text-align: center;
-}
-
 .text {
 	width: 50%;
 	text-align: center;
-	font-size: 1em;
 	font: 16px "HelveticaNeue-Bold", sans-serif;
+	margin: 0 auto 0 auto;
 }
 
 .overview {
-	margin: 0 auto 50px auto;
+	margin: 0 auto 20px auto;
 }
 
-.description {
-	margin: 50px auto 50px auto;
+.trailer {
+	background: url('../../../img/projects/pocketballoon/cloud_back.png') no-repeat left bottom -200px / cover;
+	margin: auto;
+	overflow: hidden;
+	text-align: center;
+	padding: 40px 0 60px 0;
+}
+
+.features {
+	background-color: #f8f3cf;	
+	padding: 0 0 20px 0;
 }
 
 .availability {
@@ -147,15 +149,15 @@ h1 {
 }
 
 .screenshots {
+	background: url('../../../img/projects/pocketballoon/cloud_front.png') no-repeat left bottom -120px / cover;
+	background-color: #f8f3cf;	
 	text-align: center;
-	width: 680px;
-	margin: 20px auto 20px auto;
+	padding: 40px 0 20px 0;
 }
 
 .screenshots img {
 	width: 128px;
 	height: 256px;
-	border: 1px #ece7cf solid;
 	object-fit: contain;
 }
 
