@@ -3,6 +3,19 @@
 	color: #ffffff;
 	padding: 2rem 0 2rem 0;
 	margin-bottom: 1rem;
+	font: 1em "HelveticaNeue", sans-serif;
+}
+
+.title {
+	font: 2.5em "HelveticaNeue-Bold", sans-serif;
+}
+
+.subtitle {
+	font: 2em "HelveticaNeue-Bold", sans-serif;
+}
+
+.bio {
+	font: 1em "HelveticaNeue", sans-serif;
 }
 
 .avatar {
@@ -10,8 +23,13 @@
 	float: left;
 }
 
+.project-title {
+	font: 1.5em "HelveticaNeue-Bold", sans-serif;
+}
+
 .project-description {
 	margin-top: 1rem;
+	font: 1em "HelveticaNeue", sans-serif;
 }
 
 .project-thumb {
@@ -21,28 +39,18 @@
 	background-position: center;
 }
 
-.crimild-thumb {
-	background-image: url( "../img/thumb-crimild.jpg" );
+.project-row {
+	margin: 20px 0 0 0;
 }
 
-.le-voyage-thumb {
-	background-image: url( "../img/thumb-le-voyage.jpg" );
-}
-
-.the-purge-protocol-thumb {
-	background-image: url( "../img/thumb-the-purge-protocol.jpg" );
-}
-
-.nino-de-cobre-thumb {
-	background-image: url( "../img/thumb-nino-de-cobre.jpg" );
-}
-
-.dogfighter-thumb {
-	background-image: url( "../img/thumb-dogfighter-ios.jpg" );
-}
-
-.revancha-zombie-thumb {
-	background-image: url( "../img/thumb-revancha-zombie.jpg" );
+.project-button {
+	display: block;
+	text-align: left;
+	border: 0;
+	line-height: 1;
+	color: #000000;
+	font: 1em "HelveticaNeue-Bold", sans-serif;
+	margin: 0 0 5px 0;
 }
 
 .icon-social {
