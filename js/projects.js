@@ -24,6 +24,17 @@ function populateProjects() {
             ]
         },
         {
+            "title": "Offices and Managers #1",
+            "description": "\"Offices and Managers Presenta: Falla critica\" is a short comic book about five adventurers in an impossible situation.",
+            "thumbnailURL": "img/thumb-oam-01.jpg",
+            "links": [
+                {
+                    "title": "Download PDF (Spanish)",
+                    "url": "projects/oam_01/oam_01.pdf"
+                },
+            ]
+        },
+        {
             "title": "Pocket Balloon",
             "description": "Pocket Balloon uses augmented reality to give you a unique experience. Drive your balloon just by touching the screen and blowing. Look for landing zones around you and land your balloon on them to get points and compete with your friends.",
             "thumbnailURL": "img/thumb-pocket-balloon.jpg",
