@@ -24,6 +24,17 @@ function populateProjects() {
             ]
         },
         {
+            "title": "Merge Wars",
+            "description": "\"Merge Wars\" is a prototype for a casual-type of game where the player needs to improve her base by merging buildings of the same type.",
+            "thumbnailURL": "img/thumb-merge-wars-prototype.jpg",
+            "links": [
+                {
+                    "title": "Play!",
+                    "url": "https://hhsaez.itch.io/merge-wars"
+                },
+            ]
+        },
+        {
             "title": "Offices and Managers #1",
             "description": "\"Offices and Managers Presenta: Falla critica\" is a short comic book about five adventurers in an impossible situation.",
             "thumbnailURL": "img/thumb-oam-01.jpg",
@@ -31,6 +42,17 @@ function populateProjects() {
                 {
                     "title": "Download PDF (Spanish)",
                     "url": "projects/oam_01/oam_01.pdf"
+                },
+            ]
+        },
+        {
+            "title": "GREED",
+            "description": "\"GREED\" is a prototype for a minimalistic game in which you need to learn the best route to maximize your score at the end.",
+            "thumbnailURL": "img/thumb-greed-prototype.jpg",
+            "links": [
+                {
+                    "title": "Play!",
+                    "url": "https://hhsaez.itch.io/greed"
                 },
             ]
         },
