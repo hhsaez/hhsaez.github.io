@@ -24,13 +24,13 @@ function populateProjects() {
             ]
         },
         {
-            "title": "Merge Wars",
-            "description": "\"Merge Wars\" is a prototype for a casual-type of game where the player needs to improve her base by merging buildings of the same type.",
-            "thumbnailURL": "img/thumb-merge-wars-prototype.jpg",
+            "title": "Setenta y Siete",
+            "description": "\"Setenta y Siete\" (a.k.a. \"Seventy Seven\") is a short comic book about time travel and paradoxes. It was presented at the contest organized by Crack Bang Boom 2019, one of the biggest comic books conventions in Argentina.",
+            "thumbnailURL": "img/thumb-77.jpg",
             "links": [
                 {
-                    "title": "Play!",
-                    "url": "https://hhsaez.itch.io/merge-wars"
+                    "title": "Download PDF (Spanish)",
+                    "url": "projects/setenta_y_siete/setenta_y_siete.pdf"
                 },
             ]
         },
@@ -42,6 +42,17 @@ function populateProjects() {
                 {
                     "title": "Download PDF (Spanish)",
                     "url": "projects/oam_01/oam_01.pdf"
+                },
+            ]
+        },
+        {
+            "title": "Merge Wars",
+            "description": "\"Merge Wars\" is a prototype for a casual-type of game where the player needs to improve her base by merging buildings of the same type.",
+            "thumbnailURL": "img/thumb-merge-wars-prototype.jpg",
+            "links": [
+                {
+                    "title": "Play!",
+                    "url": "https://hhsaez.itch.io/merge-wars"
                 },
             ]
         },

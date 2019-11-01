@@ -58,6 +58,24 @@
 	margin: 20px;
 }
 
+.social-link {
+	text-align: center;
+}
+
+.social-icon-container {
+	height: 60px;
+}
+
+.social-icon {
+	height: 32px;
+	margin: 20px;
+}
+
+.social-title {
+	font: 1em "HelveticaNeue", sans-serif;
+	color: #000000;
+}
+
 footer p {
 	text-align: center;
 }
