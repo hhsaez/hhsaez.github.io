@@ -46,8 +46,19 @@ function populateProjects() {
             ]
         },
         {
+            "title": "Project: Conquest",
+            "description": "\"Project: Conquest\" is a prototype for a casual-type of game where the player needs to improve her base by merging buildings of the same type.",
+            "thumbnailURL": "img/thumb-conquest-prototype.jpg",
+            "links": [
+                {
+                    "title": "Play!",
+                    "url": "https://hhsaez.github.io/conquest-prototype"
+                },
+            ]
+        },
+        {
             "title": "Merge Wars",
-            "description": "\"Merge Wars\" is a prototype for a casual-type of game where the player needs to improve her base by merging buildings of the same type.",
+            "description": "\"Merge Wars\" is a prototype for a casual-type of game where the player uses merge mechanics to create a base and attack enemies.",
             "thumbnailURL": "img/thumb-merge-wars-prototype.jpg",
             "links": [
                 {
