@@ -24,6 +24,36 @@ function populateProjects() {
             ]
         },
         {
+            "title": "Querida Olivia",
+            "description": "A short story about monsters, love and sacrifices. ",
+            "thumbnailURL": "img/thumb-querida-olivia.jpg",
+            "links": [
+                {
+                    "title": "Download PDF (Spanish)",
+                    "url": "projects/querida_olivia/querida_olivia.pdf"
+                }
+            ]
+        },
+        {
+            "title": "Majestic-X",
+            "description": "A giant robots fighting game developed in less than 48hs during the Ludum Dare 46 challenge.",
+            "thumbnailURL": "img/thumb-majestic-x.png",
+            "links": [
+                {
+                    "title": "Play!",
+                    "url": "http://www.hhsaez.com/ld46/"
+                },
+				{
+					"title": "Ludum Dare #46",
+					"url": "https://ldjam.com/events/ludum-dare/46/majestic-x"
+				},
+				{
+					"title": "Itch.io",
+					"url": "https://hhsaez.itch.io/majestic-x"
+				}
+            ]
+        },
+        {
             "title": "Setenta y Siete",
             "description": "\"Setenta y Siete\" (a.k.a. \"Seventy Seven\") is a short comic book about time travel and paradoxes. It was presented at the contest organized by Crack Bang Boom 2019, one of the biggest comic books conventions in Argentina.",
             "thumbnailURL": "img/thumb-77.jpg",
