@@ -40,8 +40,17 @@
 	letter-spacing: 10px;
 }
 
+.project {
+	margin: 0 0 25px 0;
+}
+
 .project-title {
 	font: 1.5em "HelveticaNeue-Bold", sans-serif;
+}
+
+.project-meta {
+	font: 0.9em "HelveticaNeue-Bold", sans-serif;
+	color: gray;
 }
 
 .project-description {
