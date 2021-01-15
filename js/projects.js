@@ -26,7 +26,7 @@ function populateProjects() {
             "year": 202001,
         },
         {
-            "title": "Jagerlied",
+            "title": "Jägerlied",
             "description": "The first chapter of my new graphic novel is now available online!",
             "thumbnailURL": "img/thumb-jagerlied-00.jpg",
             "links": [
