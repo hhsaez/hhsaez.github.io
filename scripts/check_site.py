@@ -29,7 +29,7 @@ class References(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if tag == "article" and attrs.get("class") == "portfolio-project":
+        if tag == "article" and "portfolio-project" in attrs.get("class", "").split():
             self.current_project_links = []
         if tag == "a" and self.current_project_links is not None:
             self.current_project_links.append(attrs.get("href", ""))
@@ -80,7 +80,6 @@ homepage = References()
 homepage.feed((PUBLIC / "index.html").read_text())
 project_count = 0
 project_dates = {}
-project_categories = {}
 project_destinations = {}
 for source in (ROOT / "content/projects").glob("*/index.md"):
     metadata = tomllib.loads(source.read_text().split("+++", 2)[1])
@@ -89,7 +88,6 @@ for source in (ROOT / "content/projects").glob("*/index.md"):
     if not (PUBLIC / route.lstrip("/") / "index.html").is_file():
         errors.append(f"Missing project page: {route}")
     project_dates[route] = metadata["date"]
-    project_categories[route] = set(metadata["categories"])
     project_destinations[route] = metadata.get("primaryURL") or metadata.get("links", [{}])[0].get("url", route)
     check_url(project_destinations[route], str(source.relative_to(ROOT)), route)
     for link in metadata.get("links", []):
@@ -97,17 +95,10 @@ for source in (ROOT / "content/projects").glob("*/index.md"):
     for category in metadata["categories"]:
         check_url(f"/categories/{category}/", str(source.relative_to(ROOT)), route)
 
-config = tomllib.loads((ROOT / "hugo.toml").read_text())
-expected_home_projects = set()
-for group in config["params"]["homepage"]["projectGroups"]:
-    routes = [route for route in project_dates if project_categories[route].intersection(group["categories"])]
-    expected_home_projects.update(sorted(routes, key=project_dates.get, reverse=True)[:3])
-    if len(routes) > 3 and group["moreURL"] not in homepage.urls:
-        errors.append(f"Missing section link: {group['moreLabel']}")
-expected_destinations = Counter(project_destinations[route] for route in expected_home_projects)
+expected_destinations = Counter(project_destinations.values())
 actual_destinations = Counter(links[0] for links in homepage.project_cards if links)
 if actual_destinations != expected_destinations:
-    errors.append("Homepage must link directly to the three newest projects in each group")
+    errors.append("Homepage mosaic must link directly to every project exactly once")
 
 archive = References()
 archive.feed((PUBLIC / "projects/index.html").read_text())
@@ -142,4 +133,4 @@ for source in (ROOT / "content/projects").glob("*/index.md"):
 
 if errors:
     sys.exit("\n".join(sorted(set(errors))))
-print(f"Verified homepage previews, {project_count} projects in chronological archive, categories, search, local assets, and 6 legacy URLs.")
+print(f"Verified {project_count} projects in homepage mosaic and chronological archive, categories, search, local assets, and 6 legacy URLs.")

@@ -5,6 +5,7 @@ releaseMonth = "2016-01"
 summary = "An iOS game inspired by the works of George Méliès and Jules Verne. Fly through the sky and space while using swipe controls to avoid balloons, storms, asteroids and other kinds of dangers."
 categories = ["games"]
 featureimage = "feature.jpg"
+mosaicLarge = true
 
 [[links]]
 title = "View details"

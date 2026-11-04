@@ -3,7 +3,6 @@ title = "Niño de Cobre"
 date = 2014-08-01
 releaseMonth = "2014-08"
 summary = "The \"Niño de Cobre\" project is an Arduino based robot that uses and Android phone as brain. The robot is intended to be autonomos, but orders can be given by using a web console."
-homeSummary = "An Arduino robot with an Android phone for a brain."
 categories = ["robotics"]
 featureimage = "feature.jpg"
 

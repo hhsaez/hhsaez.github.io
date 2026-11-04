@@ -5,16 +5,11 @@
 {{ with .Params.primaryURL }}
   {{ $destination = . }}
 {{ end }}
-<article class="portfolio-project">
-  <a class="portfolio-project-main" href="{{ $destination | safeURL }}">
+<article class="portfolio-project{{ if .Params.mosaicLarge }} portfolio-project-large{{ end }}">
+  <a class="portfolio-project-main" href="{{ $destination | safeURL }}" aria-label="{{ .Title }}" title="{{ .Title }}">
     {{ with .Resources.Get .Params.featureimage }}
       {{ $image := .Resize "600x" }}
       <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="" loading="lazy" decoding="async" class="nozoom">
     {{ end }}
-    <h3>{{ .Title }}</h3>
   </a>
-  <p>{{ .Params.homeSummary | default (.Summary | plainify) }}</p>
-  {{ if gt (len .Params.links) 1 }}
-    <a class="portfolio-project-details" href="{{ .RelPermalink }}" aria-label="About {{ .Title }}">About this project &rarr;</a>
-  {{ end }}
 </article>

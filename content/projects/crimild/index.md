@@ -3,9 +3,9 @@ title = "Crimild Engine"
 date = 2020-01-01
 releaseMonth = "2020-01"
 summary = "A scene graph based framework for games, simulations and interactive applications."
-homeSummary = "My scene graph based framework for games and interactive applications."
 categories = ["programming"]
 featureimage = "feature.jpg"
+mosaicLarge = true
 
 [[links]]
 title = "Blog"

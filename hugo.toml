@@ -71,24 +71,12 @@ summaryLength = 0
 [params.homepage]
   layout = "profile"
   showRecent = true
-
-[[params.homepage.projectGroups]]
-  title = "Play"
-  categories = ["games"]
-  moreLabel = "More games…"
-  moreURL = "/categories/games/"
-
-[[params.homepage.projectGroups]]
-  title = "Read"
-  categories = ["comics"]
-  moreLabel = "More comics…"
-  moreURL = "/categories/comics/"
-
-[[params.homepage.projectGroups]]
-  title = "Explore"
-  categories = ["programming", "robotics"]
-  moreLabel = "More projects…"
-  moreURL = "/projects/"
+  mosaicOrder = [
+    "jagerlied", "pocket-balloon", "the-purge-protocol", "nino-de-cobre",
+    "le-voyage", "setenta-y-siete", "majestic-x", "querida-olivia", "greed",
+    "crimild", "merge-wars", "conquest", "dogfighter", "offices-and-managers",
+    "revancha-zombie", "judgement-day",
+  ]
 
 [params.article]
   showDate = true
