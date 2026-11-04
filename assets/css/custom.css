@@ -1,0 +1,38 @@
+#main-content:has(.portfolio-featured) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 1rem;
+}
+
+#main-content:has(.portfolio-featured) > article,
+#main-content:has(.portfolio-featured) > section {
+  flex-shrink: 0;
+}
+
+.portfolio-featured {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.portfolio-all-projects,
+.project-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-block: 2rem;
+}

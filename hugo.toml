@@ -1,0 +1,105 @@
+baseURL = "https://www.hhsaez.com/"
+title = "H. Hernan Saez"
+theme = "blowfish"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+summaryLength = 0
+
+[pagination]
+  pagerSize = 24
+
+[taxonomies]
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[languages.en]
+  locale = "en"
+  label = "English"
+  title = "H. Hernan Saez"
+
+[languages.en.params]
+  description = "Games, comics, programming, and robotics by H. Hernan Saez."
+  dateFormat = "January 2006"
+
+[languages.en.params.author]
+  name = "H. Hernan Saez"
+  email = "hhsaez@gmail.com"
+  image = "img/avatar.PNG"
+  headline = "Fly me to the moon"
+  links = [
+    { github = "https://github.com/hhsaez" },
+    { twitter = "https://twitter.com/hhsaez" },
+    { instagram = "https://www.instagram.com/hhsaez" },
+    { itch-io = "https://hhsaez.itch.io" },
+    { youtube = "https://www.youtube.com/channel/UCveOzTueH0PaRaBEpYQPSgA" },
+    { linkedin = "https://www.linkedin.com/in/hhsaez" },
+    { facebook = "https://facebook.com/hhsaez" },
+    { deviantart = "https://hhsaez.deviantart.com/" },
+    { email = "mailto:hhsaez@gmail.com" },
+  ]
+
+[[menus.main]]
+  name = "Projects"
+  pageRef = "/projects"
+  weight = 10
+[[menus.main]]
+  name = "Games"
+  pageRef = "/categories/games"
+  weight = 20
+[[menus.main]]
+  name = "Comics"
+  pageRef = "/categories/comics"
+  weight = 30
+[[menus.main]]
+  name = "Programming"
+  pageRef = "/categories/programming"
+  weight = 40
+[[menus.main]]
+  name = "Robotics"
+  pageRef = "/categories/robotics"
+  weight = 50
+
+[params]
+  colorScheme = "slate"
+  defaultAppearance = "light"
+  autoSwitchAppearance = true
+  enableSearch = true
+  mainSections = ["projects"]
+  thumbnailAspectRatio = "1.333"
+
+[params.header]
+  layout = "basic"
+
+[params.homepage]
+  layout = "profile"
+  showRecent = true
+
+[params.article]
+  showDate = true
+  showAuthor = false
+  showHero = true
+  heroStyle = "basic"
+  showBreadcrumbs = true
+  showReadingTime = false
+  showWordCount = false
+  showPagination = false
+  showTaxonomies = true
+  showTableOfContents = false
+
+[params.list]
+  cardView = true
+  showSummary = true
+  groupByYear = false
+
+[params.term]
+  cardView = true
+  groupByYear = false
+  showTableOfContents = false
+
+[params.footer]
+  showThemeAttribution = true
