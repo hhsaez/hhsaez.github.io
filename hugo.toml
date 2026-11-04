@@ -59,7 +59,6 @@ summaryLength = 0
     { linkedin = "https://www.linkedin.com/in/hhsaez" },
     { facebook = "https://facebook.com/hhsaez" },
     { deviantart = "https://hhsaez.deviantart.com/" },
-    { email = "mailto:hhsaez@gmail.com" },
   ]
 
 [[languages.en.menus.main]]
