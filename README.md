@@ -63,11 +63,11 @@ The site check verifies translation pairs, reciprocal switcher links, HTML langu
 
 `static/` is copied directly to the site root. It retains the existing image, CSS, JavaScript, and font URLs. The old JavaScript project/social renderers have been removed; legacy JavaScript remains for Le Voyage.
 
-The Le Voyage microsite and privacy policy remain unchanged at `/projects/levoyage/index.html` and `/projects/levoyage/privacy.html`. Its new portfolio entry is at `/projects/le-voyage/` and links to the original microsite. The microsite retains its original desktop layout and third-party HTTP dependencies; modernizing it is separate work.
+The Le Voyage microsite and privacy policy retain their content and design at `/projects/levoyage/index.html` and `/projects/levoyage/privacy.html`. Both now load the official jQuery 3.7.1 build instead of vulnerable jQuery 3.2.1. The old bundle has been removed. Stay on jQuery 3.x while using the existing Bootstrap build, which rejects jQuery 4.x. Its portfolio entry is at `/projects/le-voyage/` and links to the original microsite. The microsite retains its original desktop layout and third-party HTTP dependencies; modernizing it is separate work.
 
 The four comics open directly in `comics.hhsaez.com`: Jägerlied: Sombras Sobre Nhil uses `#/reader/jagerlied-shadows/1`, Querida Olivia uses `#/reader/querida_olivia/1`, Setenta y Siete uses `#/reader/setenta_y_siete/1`, and Offices and Managers uses `#/reader/offices_and_managers/1`. Project links are labeled Read / Leer. Local comic PDFs have been removed, and their former download URLs are no longer served. Build into a fresh directory or use `hugo --cleanDestinationDir` when reusing an existing output directory to remove stale PDF copies. Creating additional game websites is deferred. Other external project URLs are retained from the original portfolio; some historical services or games may no longer be available.
 
-The migration link audit returned HTTP 200 for 22 of the 23 external project links. DogFighter's original App Store link returned HTTP 404; it is retained for now. These are HTTP availability checks, not verification that historical games still run (Revancha Zombie, for example, requires Flash).
+DogFighter's unavailable App Store link has been removed in both languages; its homepage tile now opens the existing video link. Other historical games may still require obsolete software (Revancha Zombie, for example, requires Flash).
 
 Majestic-X's homepage tile and Play / ¡Jugar! link open `https://hhsaez.itch.io/majestic-x`.
 
