@@ -1,6 +1,6 @@
 +++
 title = "Proyectos"
-description = "Juegos, cómics, programación y robótica de H. Hernan Saez."
+description = "Juegos, cómics, programación y robótica de H. Hernán Saez."
 cardView = false
 groupByYear = true
 showSummary = false

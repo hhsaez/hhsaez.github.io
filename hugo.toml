@@ -1,5 +1,5 @@
 baseURL = "https://www.hhsaez.com/"
-title = "H. Hernan Saez"
+title = "H. Hernán Saez"
 theme = "blowfish"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
@@ -21,31 +21,31 @@ summaryLength = 0
 [languages.en]
   locale = "en"
   label = "English"
-  title = "H. Hernan Saez"
+  title = "H. Hernán Saez"
   weight = 1
 
 [languages.en.params]
   displayName = "English"
   flag = "🇬🇧"
   isoCode = "en"
-  description = "Games, comics, programming, and robotics by H. Hernan Saez."
+  description = "Games, comics, programming, and robotics by H. Hernán Saez."
   dateFormat = "January 2006"
 
 [languages.es]
   locale = "es"
   label = "Español"
-  title = "H. Hernan Saez"
+  title = "H. Hernán Saez"
   weight = 2
 
 [languages.es.params]
   displayName = "Español"
   flag = "🇪🇸"
   isoCode = "es"
-  description = "Juegos, cómics, programación y robótica de H. Hernan Saez."
+  description = "Juegos, cómics, programación y robótica de H. Hernán Saez."
   dateFormat = "January 2006"
 
 [params.author]
-  name = "H. Hernan Saez"
+  name = "H. Hernán Saez"
   email = "hhsaez@gmail.com"
   image = "img/avatar.PNG"
   headline = "Fly me to the Moon"

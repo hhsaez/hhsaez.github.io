@@ -5,18 +5,16 @@ releaseMonth = "2020-04"
 summary = "A giant robots fighting game developed in less than 48hs during the Ludum Dare 46 challenge."
 categories = ["games"]
 featureimage = "feature.png"
+primaryURL = "https://hhsaez.itch.io/majestic-x"
 
 [[links]]
 title = "Play!"
-url = "http://www.hhsaez.com/ld46/"
+url = "https://hhsaez.itch.io/majestic-x"
 
 [[links]]
 title = "Ludum Dare #46"
 url = "https://ldjam.com/events/ludum-dare/46/majestic-x"
 
-[[links]]
-title = "Itch.io"
-url = "https://hhsaez.itch.io/majestic-x"
 +++
 
 A giant robots fighting game developed in less than 48hs during the Ludum Dare 46 challenge.

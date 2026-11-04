@@ -1,5 +1,5 @@
 +++
-title = "H. Hernan Saez"
+title = "H. Hernán Saez"
 +++
 
 I make games, draw comics, and build things.\

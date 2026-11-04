@@ -1,7 +1,7 @@
 +++
-title = "Jägerlied"
-date = 2020-12-01
-releaseMonth = "2020-12"
+title = "Jägerlied: Sombras Sobre Nhil"
+date = 2024-11-01
+releaseMonth = "2024-11"
 summary = "¡El primer capítulo de mi novela gráfica ya está disponible en línea!"
 categories = ["comics"]
 featureimage = "feature.jpg"

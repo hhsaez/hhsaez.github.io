@@ -1,4 +1,4 @@
-# H. Hernan Saez — personal website
+# H. Hernán Saez — personal website
 
 A Hugo site using [Blowfish](https://blowfish.page/). The theme is a Git submodule pinned to **v3.9.0** (`ebe683e9c2668972b71bc011e61e0004ff8e7689`). Hugo Extended **0.165.0** is pinned in `.hugo-version` for CI.
 
@@ -41,7 +41,7 @@ url = "https://comics.hhsaez.com/#/reader/example/1"
 
 Add the description after the front matter, then `{{< project-links >}}` to render the links. Categories are `games`, `comics`, `programming`, and `robotics`. Keep `summary` and the description consistent when editing.
 
-Homepage images link directly to the first entry in `links` (the comics reader, game, or project website). Set an optional top-level `primaryURL` to override that destination. The homepage presents all projects in one image-only mosaic, with accessible project labels and title tooltips. Set `mosaicLarge = true` to give a project a larger tile; Jägerlied, Crimild, and Le Voyage use this setting. The large images appear at varied positions among games, comics, and experiments. The final four small tiles form two balanced rows on desktop; the final tile fills the last phone row. Archive and category cards continue to open the detail pages and retain their titles and metadata.
+Homepage images link directly to the first entry in `links` (the comics reader, game, or project website). Set an optional top-level `primaryURL` to override that destination. The homepage presents all projects in one image-only mosaic, with accessible project labels and title tooltips. Set `mosaicLarge = true` to give a project a larger tile; Jägerlied: Sombras Sobre Nhil, Crimild, and Le Voyage use this setting. The large images appear at varied positions among games, comics, and experiments. The final four small tiles form two balanced rows on desktop; the final tile fills the last phone row. Archive and category cards continue to open the detail pages and retain their titles and metadata.
 
 `date` uses the first day of the known release month for sorting; only the month and year are displayed. This does not assert an exact release day. `releaseMonth` records the original precision. Every project appears on the homepage, without category sections or More links. `params.homepage.mosaicOrder` in `hugo.toml` sets a deliberately mixed, stable order using project slugs. Projects not listed there are appended newest first, so new work is never omitted. CSS fills gaps between differently sized tiles. Projects is a separate chronological list of every project, newest first, grouped by year.
 
@@ -65,11 +65,11 @@ The site check verifies translation pairs, reciprocal switcher links, HTML langu
 
 The Le Voyage microsite and privacy policy remain unchanged at `/projects/levoyage/index.html` and `/projects/levoyage/privacy.html`. Its new portfolio entry is at `/projects/le-voyage/` and links to the original microsite. The microsite retains its original desktop layout and third-party HTTP dependencies; modernizing it is separate work.
 
-The four comics open directly in `comics.hhsaez.com`: Jägerlied uses `#/reader/jagerlied-shadows/1`, Querida Olivia uses `#/reader/querida_olivia/1`, Setenta y Siete uses `#/reader/setenta_y_siete/1`, and Offices and Managers uses `#/reader/offices_and_managers/1`. Project links are labeled Read / Leer. Local comic PDFs have been removed, and their former download URLs are no longer served. Build into a fresh directory or use `hugo --cleanDestinationDir` when reusing an existing output directory to remove stale PDF copies. Creating additional game websites is deferred. Other external project URLs are retained from the original portfolio; some historical services or games may no longer be available.
+The four comics open directly in `comics.hhsaez.com`: Jägerlied: Sombras Sobre Nhil uses `#/reader/jagerlied-shadows/1`, Querida Olivia uses `#/reader/querida_olivia/1`, Setenta y Siete uses `#/reader/setenta_y_siete/1`, and Offices and Managers uses `#/reader/offices_and_managers/1`. Project links are labeled Read / Leer. Local comic PDFs have been removed, and their former download URLs are no longer served. Build into a fresh directory or use `hugo --cleanDestinationDir` when reusing an existing output directory to remove stale PDF copies. Creating additional game websites is deferred. Other external project URLs are retained from the original portfolio; some historical services or games may no longer be available.
 
 The migration link audit returned HTTP 200 for 22 of the 23 external project links. DogFighter's original App Store link returned HTTP 404; it is retained for now. These are HTTP availability checks, not verification that historical games still run (Revancha Zombie, for example, requires Flash).
 
-Majestic-X's `/ld46/` URL is served by a separate GitHub Pages project and returned HTTP 200 during migration. It is intentionally excluded from local-file checks and must remain independently deployed.
+Majestic-X's homepage tile and Play / ¡Jugar! link open `https://hhsaez.itch.io/majestic-x`.
 
 The old homepage's Universal Analytics snippet is not carried forward. No analytics provider is configured.
 
