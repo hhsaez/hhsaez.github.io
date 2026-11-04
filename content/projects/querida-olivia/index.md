@@ -3,10 +3,9 @@ title = "Querida Olivia"
 date = 2020-02-01
 releaseMonth = "2020-02"
 summary = "A short story about monsters, love and sacrifices."
+homeSummary = "A short comic about monsters, love, and sacrifices."
 categories = ["comics"]
 featureimage = "feature.jpg"
-featured = true
-featuredOrder = 2
 
 [[links]]
 title = "Download PDF (Spanish)"

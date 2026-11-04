@@ -3,10 +3,9 @@ title = "Majestic-X"
 date = 2020-04-01
 releaseMonth = "2020-04"
 summary = "A giant robots fighting game developed in less than 48hs during the Ludum Dare 46 challenge."
+homeSummary = "A giant robot fighting game made in 48 hours for Ludum Dare 46."
 categories = ["games"]
 featureimage = "feature.png"
-featured = true
-featuredOrder = 3
 
 [[links]]
 title = "Play!"

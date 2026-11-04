@@ -30,10 +30,9 @@ title = "Project title"
 date = 2020-12-01
 releaseMonth = "2020-12"
 summary = "A short description for the card and search results."
+homeSummary = "A shorter caption for the homepage."
 categories = ["comics"]
 featureimage = "feature.jpg"
-featured = true
-featuredOrder = 1
 
 [[links]]
 title = "Read PDF (Spanish)"
@@ -41,11 +40,13 @@ url = "/projects/example/example.pdf"
 +++
 ```
 
-Add the description after the front matter, then `{{< project-links >}}` to render the links. Categories are `games`, `comics`, `programming`, and `robotics`. Keep `summary` and the description consistent when editing.
+Add the description after the front matter, then `{{< project-links >}}` to render the links. Categories are `games`, `comics`, `programming`, and `robotics`. Keep `summary` and the description consistent when editing. Optional `homeSummary` gives the homepage a shorter caption; otherwise it uses `summary`.
 
-`date` uses the first day of the known release month for sorting; only the month and year are displayed. This does not assert an exact release day. `releaseMonth` records the original precision. Add `featured = true` and a unique `featuredOrder` to curate the homepage; ordinary project listings sort by release date.
+Homepage cards link directly to the first entry in `links` (the comic PDF, game, or project website). Set an optional top-level `primaryURL` to override that destination. Projects with multiple links also show an About this project link to the detail page. Archive and category cards continue to open the detail pages. Dates and category badges are omitted from homepage cards.
 
-The bio is in `content/_index.md`. Site settings, menus, and social links are in `hugo.toml`. The homepage uses Blowfish's profile layout and cards, with a small featured-projects override in `layouts/partials/recent-articles/main.html`.
+`date` uses the first day of the known release month for sorting; only the month and year are displayed. This does not assert an exact release day. `releaseMonth` records the original precision. The homepage shows up to three newest projects per group: Play (games), Read (comics), and Explore (programming and robotics). Groups with additional projects include a section-specific More link: games and comics open their respective categories, while other projects open All Projects. Edit `params.homepage.projectGroups` in `hugo.toml` to rename or regroup sections and set their `moreLabel` and `moreURL`; include any new project categories there. All Projects is a separate chronological list of every project, newest first, grouped by year.
+
+The bio is in `content/_index.md`. Site settings, menus, and social links are in `hugo.toml`. The homepage uses Blowfish's profile layout, a grouped-projects override in `layouts/partials/recent-articles/main.html`, and simple project cards in `layouts/partials/portfolio/card.html`. Navigation contains Home, All Projects, and Blog. Featured social profiles are configured in `params.author.featuredLinks`; other profiles appear in a secondary row.
 
 ## Preserved content
 

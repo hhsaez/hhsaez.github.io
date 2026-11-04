@@ -31,6 +31,7 @@ summaryLength = 0
   email = "hhsaez@gmail.com"
   image = "img/avatar.PNG"
   headline = "Fly me to the moon"
+  featuredLinks = ["github", "instagram", "linkedin"]
   links = [
     { github = "https://github.com/hhsaez" },
     { twitter = "https://twitter.com/hhsaez" },
@@ -44,25 +45,17 @@ summaryLength = 0
   ]
 
 [[menus.main]]
-  name = "Projects"
-  pageRef = "/projects"
+  name = "Home"
+  pageRef = "/"
   weight = 10
 [[menus.main]]
-  name = "Games"
-  pageRef = "/categories/games"
+  name = "All Projects"
+  pageRef = "/projects"
   weight = 20
 [[menus.main]]
-  name = "Comics"
-  pageRef = "/categories/comics"
+  name = "Blog"
+  url = "https://blog.hhsaez.com/"
   weight = 30
-[[menus.main]]
-  name = "Programming"
-  pageRef = "/categories/programming"
-  weight = 40
-[[menus.main]]
-  name = "Robotics"
-  pageRef = "/categories/robotics"
-  weight = 50
 
 [params]
   colorScheme = "slate"
@@ -78,6 +71,24 @@ summaryLength = 0
 [params.homepage]
   layout = "profile"
   showRecent = true
+
+[[params.homepage.projectGroups]]
+  title = "Play"
+  categories = ["games"]
+  moreLabel = "More games…"
+  moreURL = "/categories/games/"
+
+[[params.homepage.projectGroups]]
+  title = "Read"
+  categories = ["comics"]
+  moreLabel = "More comics…"
+  moreURL = "/categories/comics/"
+
+[[params.homepage.projectGroups]]
+  title = "Explore"
+  categories = ["programming", "robotics"]
+  moreLabel = "More projects…"
+  moreURL = "/projects/"
 
 [params.article]
   showDate = true
