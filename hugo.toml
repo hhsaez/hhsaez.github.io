@@ -1,0 +1,134 @@
+baseURL = "https://www.hhsaez.com/"
+title = "H. Hernán Saez"
+theme = "blowfish"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+summaryLength = 0
+
+[pagination]
+  pagerSize = 24
+
+[taxonomies]
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[languages.en]
+  locale = "en"
+  label = "English"
+  title = "H. Hernán Saez"
+  weight = 1
+
+[languages.en.params]
+  displayName = "English"
+  flag = "🇬🇧"
+  isoCode = "en"
+  description = "Games, comics, programming, and robotics by H. Hernán Saez."
+  dateFormat = "January 2006"
+
+[languages.es]
+  locale = "es"
+  label = "Español"
+  title = "H. Hernán Saez"
+  weight = 2
+
+[languages.es.params]
+  displayName = "Español"
+  flag = "🇪🇸"
+  isoCode = "es"
+  description = "Juegos, cómics, programación y robótica de H. Hernán Saez."
+  dateFormat = "January 2006"
+
+[params.author]
+  name = "H. Hernán Saez"
+  email = "hhsaez@gmail.com"
+  image = "img/avatar.PNG"
+  headline = "Fly me to the Moon"
+  featuredLinks = ["github", "instagram", "linkedin"]
+  links = [
+    { github = "https://github.com/hhsaez" },
+    { twitter = "https://twitter.com/hhsaez" },
+    { instagram = "https://www.instagram.com/hhsaez" },
+    { itch-io = "https://hhsaez.itch.io" },
+    { youtube = "https://www.youtube.com/channel/UCveOzTueH0PaRaBEpYQPSgA" },
+    { linkedin = "https://www.linkedin.com/in/hhsaez" },
+    { facebook = "https://facebook.com/hhsaez" },
+    { deviantart = "https://hhsaez.deviantart.com/" },
+  ]
+
+[[languages.en.menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+[[languages.en.menus.main]]
+  name = "Projects"
+  pageRef = "/projects"
+  weight = 20
+[[languages.en.menus.main]]
+  name = "Blog"
+  url = "https://blog.hhsaez.com/"
+  weight = 30
+
+[[languages.es.menus.main]]
+  name = "Inicio"
+  pageRef = "/"
+  weight = 10
+[[languages.es.menus.main]]
+  name = "Proyectos"
+  pageRef = "/projects"
+  weight = 20
+[[languages.es.menus.main]]
+  name = "Blog"
+  url = "https://blog.hhsaez.com/"
+  weight = 30
+
+[params]
+  colorScheme = "slate"
+  defaultAppearance = "light"
+  autoSwitchAppearance = true
+  enableSearch = true
+  mainSections = ["projects"]
+  thumbnailAspectRatio = "1.333"
+
+[params.header]
+  layout = "basic"
+
+[params.homepage]
+  layout = "profile"
+  showRecent = true
+  mosaicOrder = [
+    "jagerlied", "pocket-balloon", "the-purge-protocol", "nino-de-cobre",
+    "le-voyage", "setenta-y-siete", "majestic-x", "querida-olivia", "greed",
+    "crimild", "merge-wars", "conquest", "dogfighter", "offices-and-managers",
+    "revancha-zombie", "judgement-day",
+  ]
+
+[params.article]
+  showDate = true
+  showAuthor = false
+  showHero = true
+  heroStyle = "basic"
+  showBreadcrumbs = true
+  showReadingTime = false
+  showWordCount = false
+  showPagination = false
+  showTaxonomies = true
+  showTableOfContents = false
+
+[params.list]
+  cardView = true
+  showSummary = true
+  groupByYear = false
+
+[params.term]
+  cardView = true
+  groupByYear = false
+  showTableOfContents = false
+
+[params.footer]
+  showThemeAttribution = true

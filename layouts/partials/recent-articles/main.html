@@ -1,0 +1,23 @@
+{{ if .Site.Params.homepage.showRecent }}
+  {{ $projects := where .Site.RegularPages "Section" "projects" }}
+  {{ $tiles := slice }}
+  {{ $seen := slice }}
+  {{ range .Site.Params.homepage.mosaicOrder }}
+    {{ with site.GetPage (printf "/projects/%s" .) }}
+      {{ $tiles = $tiles | collections.Append . }}
+      {{ $seen = $seen | collections.Append .RelPermalink }}
+    {{ end }}
+  {{ end }}
+  {{ range $projects.ByDate.Reverse }}
+    {{ if not (in $seen .RelPermalink) }}
+      {{ $tiles = $tiles | collections.Append . }}
+    {{ end }}
+  {{ end }}
+  <section class="portfolio-gallery" aria-label="{{ i18n "project_gallery" }}">
+    <div class="portfolio-mosaic">
+      {{ range $tiles }}
+        {{ partial "portfolio/card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

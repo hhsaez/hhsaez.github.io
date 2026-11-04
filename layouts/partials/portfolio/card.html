@@ -1,0 +1,15 @@
+{{ $destination := .RelPermalink }}
+{{ with .Params.links }}
+  {{ $destination = (index . 0).url }}
+{{ end }}
+{{ with .Params.primaryURL }}
+  {{ $destination = . }}
+{{ end }}
+<article class="portfolio-project{{ if .Params.mosaicLarge }} portfolio-project-large{{ end }}">
+  <a class="portfolio-project-main" href="{{ $destination | safeURL }}" aria-label="{{ .Title }}" title="{{ .Title }}">
+    {{ with .Resources.Get .Params.featureimage }}
+      {{ $image := .Resize "600x" }}
+      <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="" loading="lazy" decoding="async" class="nozoom">
+    {{ end }}
+  </a>
+</article>

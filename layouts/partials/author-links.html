@@ -1,0 +1,36 @@
+{{ with .Site.Params.Author.links }}
+  {{ $links := dict }}
+  {{ range . }}
+    {{ $links = merge $links . }}
+  {{ end }}
+  {{ $featured := site.Params.author.featuredLinks | default slice }}
+  {{ $labels := dict "github" "GitHub" "instagram" "Instagram" "linkedin" "LinkedIn" "youtube" "YouTube" "itch-io" "Itch.io" "deviantart" "DeviantArt" }}
+  <div class="social-links">
+    {{ with $featured }}
+      <nav class="social-links-featured" aria-label="{{ i18n "social_featured" }}">
+        {{ range . }}
+          {{ $name := . }}
+          {{ with index $links $name }}
+            <a href="{{ . | safeURL }}" target="_blank" rel="me noopener noreferrer">
+              <span aria-hidden="true">{{ partial "icon.html" $name }}</span>
+              <span>{{ index $labels $name | default ($name | title) }}</span>
+            </a>
+          {{ end }}
+        {{ end }}
+      </nav>
+    {{ end }}
+    <nav class="social-links-secondary" aria-label="{{ i18n "social_more" }}">
+      {{ range $entry := . }}
+        {{ range $name, $url := $entry }}
+          {{ if not (in $featured $name) }}
+            {{ $label := index $labels $name | default ($name | title) }}
+            {{ if eq $name "email" }}{{ $label = i18n "social_email" }}{{ end }}
+            <a href="{{ $url | safeURL }}" target="_blank" rel="me noopener noreferrer" aria-label="{{ $label }}" title="{{ $label }}">
+              <span aria-hidden="true">{{ partial "icon.html" $name }}</span>
+            </a>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </nav>
+  </div>
+{{ end }}
