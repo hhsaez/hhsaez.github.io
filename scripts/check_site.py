@@ -26,9 +26,18 @@ class References(HTMLParser):
         self.urls = []
         self.project_cards = []
         self.current_project_links = None
+        self.language = None
+        self.language_links = set()
+        self.image_count = 0
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "html":
+            self.language = attrs.get("lang")
+        if tag == "img":
+            self.image_count += 1
+        if tag == "a" and attrs.get("hreflang"):
+            self.language_links.add((attrs["hreflang"], attrs.get("href")))
         if tag == "article" and "portfolio-project" in attrs.get("class", "").split():
             self.current_project_links = []
         if tag == "a" and self.current_project_links is not None:
@@ -76,37 +85,88 @@ for css in PUBLIC.rglob("*.css"):
     for url in re.findall(r"url\(\s*['\"]?([^)'\"\s]+)", text):
         check_url(url, relative, "/" + relative)
 
-homepage = References()
-homepage.feed((PUBLIC / "index.html").read_text())
+LANGUAGES = {"en": "", "es": "/es"}
+
+
+def read_page(route):
+    path = PUBLIC / route.lstrip("/") / "index.html"
+    if not path.is_file():
+        errors.append(f"Missing page: {route}")
+        return References()
+    parsed = References()
+    parsed.feed(path.read_text())
+    return parsed
+
+
+# Each translated content page must have a reciprocal switcher, not just a
+# link to the other language's homepage.
+for english in (ROOT / "content").rglob("*.en.md"):
+    spanish = english.with_name(english.name.replace(".en.md", ".es.md"))
+    if not spanish.is_file():
+        errors.append(f"Missing Spanish translation: {spanish.relative_to(ROOT)}")
+    parent = english.relative_to(ROOT / "content").parent.as_posix()
+    route = "/" if parent == "." else f"/{parent}/"
+    counterparts = {(language, prefix + route) for language, prefix in LANGUAGES.items()}
+    for language, prefix in LANGUAGES.items():
+        page = read_page(prefix + route)
+        if page.language != language:
+            errors.append(f"Incorrect HTML language: {prefix + route}")
+        if not counterparts.issubset(page.language_links):
+            errors.append(f"Missing equivalent-page language switch: {prefix + route}")
+
 project_count = 0
-project_dates = {}
-project_destinations = {}
-for source in (ROOT / "content/projects").glob("*/index.md"):
-    metadata = tomllib.loads(source.read_text().split("+++", 2)[1])
-    project_count += 1
-    route = f"/projects/{source.parent.name}/"
-    if not (PUBLIC / route.lstrip("/") / "index.html").is_file():
-        errors.append(f"Missing project page: {route}")
-    project_dates[route] = metadata["date"]
-    project_destinations[route] = metadata.get("primaryURL") or metadata.get("links", [{}])[0].get("url", route)
-    check_url(project_destinations[route], str(source.relative_to(ROOT)), route)
-    for link in metadata.get("links", []):
-        check_url(link["url"], str(source.relative_to(ROOT)), route)
-    for category in metadata["categories"]:
-        check_url(f"/categories/{category}/", str(source.relative_to(ROOT)), route)
+mosaic_order = None
+for language, prefix in LANGUAGES.items():
+    homepage = read_page(prefix + "/")
+    project_dates = {}
+    project_destinations = {}
+    for source in (ROOT / "content/projects").glob(f"*/index.{language}.md"):
+        metadata = tomllib.loads(source.read_text().split("+++", 2)[1])
+        route = f"{prefix}/projects/{source.parent.name}/"
+        project_dates[route] = metadata["date"]
+        destination = metadata.get("primaryURL") or metadata.get("links", [{}])[0].get("url", route)
+        project_destinations[route] = destination
+        check_url(destination, str(source.relative_to(ROOT)), route)
+        for link in metadata.get("links", []):
+            check_url(link["url"], str(source.relative_to(ROOT)), route)
+        for category in metadata["categories"]:
+            check_url(f"{prefix}/categories/{category}/", str(source.relative_to(ROOT)), route)
+        if language == "es":
+            original = tomllib.loads(source.with_name("index.en.md").read_text().split("+++", 2)[1])
+            for key in ("date", "releaseMonth", "categories", "featureimage", "mosaicLarge"):
+                if metadata.get(key) != original.get(key):
+                    errors.append(f"Shared metadata differs for {key}: {source.parent.name}")
+            if [link["url"] for link in metadata["links"]] != [link["url"] for link in original["links"]]:
+                errors.append(f"Project destinations differ across languages: {source.parent.name}")
 
-expected_destinations = Counter(project_destinations.values())
-actual_destinations = Counter(links[0] for links in homepage.project_cards if links)
-if actual_destinations != expected_destinations:
-    errors.append("Homepage mosaic must link directly to every project exactly once")
+    if language == "en":
+        project_count = len(project_dates)
+    elif len(project_dates) != project_count:
+        errors.append("English and Spanish project counts differ")
+    if project_count == 0:
+        errors.append("No project content found")
+    destinations = [links[0] for links in homepage.project_cards if links]
+    if Counter(destinations) != Counter(project_destinations.values()):
+        errors.append(f"{language}: Homepage mosaic must link to every project exactly once")
+    if homepage.image_count != len(project_dates) + 1:
+        errors.append(f"{language}: Missing profile or mosaic images")
+    if mosaic_order is None:
+        mosaic_order = destinations
+    elif destinations != mosaic_order:
+        errors.append("Mosaic order differs across languages")
 
-archive = References()
-archive.feed((PUBLIC / "projects/index.html").read_text())
-archive_projects = [url for url in archive.urls if url in project_dates]
-if set(archive_projects) != set(project_dates) or len(archive_projects) != project_count:
-    errors.append("All Projects must include every project exactly once")
-if [project_dates[url] for url in archive_projects] != sorted(project_dates.values(), reverse=True):
-    errors.append("All Projects must be ordered newest first")
+    archive = read_page(prefix + "/projects/")
+    archive_projects = [url for url in archive.urls if url in project_dates]
+    if set(archive_projects) != set(project_dates) or len(archive_projects) != len(project_dates):
+        errors.append(f"{language}: All Projects must include every project exactly once")
+    if [project_dates[url] for url in archive_projects] != sorted(project_dates.values(), reverse=True):
+        errors.append(f"{language}: All Projects must be ordered newest first")
+
+    search = json.loads((PUBLIC / prefix.lstrip("/") / "index.json").read_text())
+    indexed_urls = {item["permalink"] for item in search}
+    for route in project_dates:
+        if route not in indexed_urls:
+            errors.append(f"Project missing from {language} search: {route}")
 
 legacy_paths = [
     "projects/levoyage/index.html",
@@ -125,12 +185,6 @@ for path in legacy_paths:
 if (PUBLIC / "CNAME").read_text().strip() != "www.hhsaez.com":
     errors.append("Custom domain CNAME is incorrect")
 
-search = json.loads((PUBLIC / "index.json").read_text())
-indexed_urls = {item["permalink"] for item in search}
-for source in (ROOT / "content/projects").glob("*/index.md"):
-    if f"/projects/{source.parent.name}/" not in indexed_urls:
-        errors.append(f"Project missing from search: {source.parent.name}")
-
 if errors:
     sys.exit("\n".join(sorted(set(errors))))
-print(f"Verified {project_count} projects in homepage mosaic and chronological archive, categories, search, local assets, and 6 legacy URLs.")
+print(f"Verified {project_count} projects in both languages, mosaics, archives, search, reciprocal switchers, local assets, and 6 legacy URLs.")

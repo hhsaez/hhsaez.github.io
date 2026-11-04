@@ -1,5 +1,5 @@
 {{ with .Page.Params.links }}
-  <nav class="project-links" aria-label="Project links">
+  <nav class="project-links" aria-label="{{ i18n "project_links" }}">
     {{ range . }}
       <a href="{{ .url | safeURL }}">{{ .title }}</a>
     {{ end }}

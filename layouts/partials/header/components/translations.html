@@ -1,0 +1,13 @@
+{{ $translations := .AllTranslations }}
+{{ if not .IsTranslated }}
+  {{ $translations = .Site.Home.AllTranslations }}
+{{ end }}
+{{ if gt (len $translations) 1 }}
+  <div class="language-switcher" role="navigation" aria-label="{{ i18n "site_language" }}">
+    {{ range $translations }}
+      <a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}" aria-label="{{ .Language.Params.displayName }}" title="{{ .Language.Params.displayName }}"{{ if eq .Language.Lang $.Language.Lang }} aria-current="page"{{ end }}>
+        <span class="language-flag" aria-hidden="true">{{ .Language.Params.flag }}</span>
+      </a>
+    {{ end }}
+  </div>
+{{ end }}

@@ -1,5 +1,5 @@
 +++
-title = "All Projects"
+title = "Projects"
 description = "Games, comics, programming, and robotics projects by H. Hernan Saez."
 cardView = false
 groupByYear = true

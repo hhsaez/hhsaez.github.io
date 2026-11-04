@@ -1,0 +1,4 @@
+{{/* Use a language-specific resource path so labels cannot be cached across languages. */}}
+{{ $target := printf "js/appearance-labels.%s.js" .Language.Lang }}
+{{ $script := resources.Get "js/appearance-labels.js" | resources.ExecuteAsTemplate $target . | resources.Minify | resources.Fingerprint "sha512" }}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>

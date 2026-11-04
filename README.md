@@ -22,7 +22,7 @@ The generated `public/` directory, Hugo build lock, and generated image cache ar
 
 ## Editing projects
 
-Each project is a page bundle in `content/projects/<slug>/`, containing `index.md` and a thumbnail named `feature.jpg` or `feature.png`. Descriptions are Markdown; project metadata is TOML front matter:
+Each project is a page bundle in `content/projects/<slug>/`, containing `index.en.md`, `index.es.md`, and a shared thumbnail named `feature.jpg` or `feature.png`. Descriptions are Markdown; project metadata is TOML front matter:
 
 ```toml
 +++
@@ -43,9 +43,21 @@ Add the description after the front matter, then `{{< project-links >}}` to rend
 
 Homepage images link directly to the first entry in `links` (the comic PDF, game, or project website). Set an optional top-level `primaryURL` to override that destination. The homepage presents all projects in one image-only mosaic, with accessible project labels and title tooltips. Set `mosaicLarge = true` to give a project a larger tile; Jägerlied, Crimild, and Le Voyage use this setting. The large images appear at varied positions among games, comics, and experiments. The final four small tiles form two balanced rows on desktop; the final tile fills the last phone row. Archive and category cards continue to open the detail pages and retain their titles and metadata.
 
-`date` uses the first day of the known release month for sorting; only the month and year are displayed. This does not assert an exact release day. `releaseMonth` records the original precision. Every project appears on the homepage, without category sections or More links. `params.homepage.mosaicOrder` in `hugo.toml` sets a deliberately mixed, stable order using project slugs. Projects not listed there are appended newest first, so new work is never omitted. CSS fills gaps between differently sized tiles. All Projects is a separate chronological list of every project, newest first, grouped by year.
+`date` uses the first day of the known release month for sorting; only the month and year are displayed. This does not assert an exact release day. `releaseMonth` records the original precision. Every project appears on the homepage, without category sections or More links. `params.homepage.mosaicOrder` in `hugo.toml` sets a deliberately mixed, stable order using project slugs. Projects not listed there are appended newest first, so new work is never omitted. CSS fills gaps between differently sized tiles. Projects is a separate chronological list of every project, newest first, grouped by year.
 
-The bio is in `content/_index.md`. Site settings, menus, and social links are in `hugo.toml`. The homepage uses Blowfish's profile layout, a mosaic override in `layouts/partials/recent-articles/main.html`, and image tiles in `layouts/partials/portfolio/card.html`. Navigation contains Home, All Projects, and Blog. Featured social profiles are configured in `params.author.featuredLinks`; other profiles appear in a secondary row.
+The bios are in `content/_index.en.md` and `content/_index.es.md`. Site settings, menus, and social links are in `hugo.toml`. The homepage uses Blowfish's profile layout, a mosaic override in `layouts/partials/recent-articles/main.html`, and image tiles in `layouts/partials/portfolio/card.html`. Navigation contains Home, Projects, and Blog (Inicio, Proyectos, and Blog in Spanish). Featured social profiles are configured in `params.author.featuredLinks`; other profiles appear in a secondary row.
+
+## English and Spanish
+
+English remains at `/`, and Spanish is under `/es/`. Project slugs and category identifiers stay the same in both languages; display names, descriptions, link labels, navigation, dates, search, and accessibility labels are localized. Proper project names and the tagline "Fly me to the Moon" remain unchanged.
+
+Keep matching `.en.md` and `.es.md` filenames together so Hugo connects equivalent pages. Translate prose, summaries, and link labels in both files. Keep dates, release months, category identifiers, image filenames, mosaic sizes, and project destinations consistent. Images are shared between translations. The PDFs and Le Voyage microsite remain at their original URLs and are not translated.
+
+The header's 🇬🇧 / 🇪🇸 switcher links equivalent pages, indicates the current language, and retains English / Español tooltips and screen-reader labels. It uses `layouts/partials/header/components/translations.html`; language flags are configured in `hugo.toml`. Untranslated system pages fall back to the language homepages. There is no automatic language redirection. Custom interface translations live in `i18n/en.toml` and `i18n/es.toml`; Blowfish supplies its own English and Spanish interface strings.
+
+The site check verifies translation pairs, reciprocal switcher links, HTML language attributes, complete mosaics with the same order and images, archives, and search indexes in both languages.
+
+`assets/js/appearance-labels.js` keeps the theme toggle's dynamic labels localized. It is built at a separate URL per language through `layouts/partials/extend-head-uncached.html`, avoiding Blowfish's shared appearance-script cache.
 
 ## Preserved content
 

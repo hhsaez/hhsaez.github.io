@@ -1,0 +1,24 @@
+[site_language]
+other = "Idioma del sitio"
+[social_featured]
+other = "Redes sociales destacadas"
+[social_more]
+other = "Más redes sociales y contacto"
+[social_email]
+other = "Correo electrónico"
+[project_links]
+other = "Enlaces del proyecto"
+[project_gallery]
+other = "Proyectos"
+
+["footer.powered_by"]
+other = "Powered by {{ .Hugo }} &amp; {{ .Theme }}"
+
+["nav.main_menu"]
+other = "Menú principal"
+["nav.mobile_menu"]
+other = "Menú de navegación"
+["nav.close_menu"]
+other = "Cerrar menú"
+["nav.toggle_submenu"]
+other = "Mostrar u ocultar submenú"

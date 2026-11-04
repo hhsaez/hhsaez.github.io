@@ -13,7 +13,7 @@
       {{ $tiles = $tiles | collections.Append . }}
     {{ end }}
   {{ end }}
-  <section class="portfolio-gallery" aria-label="Projects">
+  <section class="portfolio-gallery" aria-label="{{ i18n "project_gallery" }}">
     <div class="portfolio-mosaic">
       {{ range $tiles }}
         {{ partial "portfolio/card.html" . }}

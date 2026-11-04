@@ -2,6 +2,7 @@ baseURL = "https://www.hhsaez.com/"
 title = "H. Hernan Saez"
 theme = "blowfish"
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 summaryLength = 0
 
@@ -21,16 +22,33 @@ summaryLength = 0
   locale = "en"
   label = "English"
   title = "H. Hernan Saez"
+  weight = 1
 
 [languages.en.params]
+  displayName = "English"
+  flag = "🇬🇧"
+  isoCode = "en"
   description = "Games, comics, programming, and robotics by H. Hernan Saez."
   dateFormat = "January 2006"
 
-[languages.en.params.author]
+[languages.es]
+  locale = "es"
+  label = "Español"
+  title = "H. Hernan Saez"
+  weight = 2
+
+[languages.es.params]
+  displayName = "Español"
+  flag = "🇪🇸"
+  isoCode = "es"
+  description = "Juegos, cómics, programación y robótica de H. Hernan Saez."
+  dateFormat = "January 2006"
+
+[params.author]
   name = "H. Hernan Saez"
   email = "hhsaez@gmail.com"
   image = "img/avatar.PNG"
-  headline = "Fly me to the moon"
+  headline = "Fly me to the Moon"
   featuredLinks = ["github", "instagram", "linkedin"]
   links = [
     { github = "https://github.com/hhsaez" },
@@ -44,15 +62,28 @@ summaryLength = 0
     { email = "mailto:hhsaez@gmail.com" },
   ]
 
-[[menus.main]]
+[[languages.en.menus.main]]
   name = "Home"
   pageRef = "/"
   weight = 10
-[[menus.main]]
-  name = "All Projects"
+[[languages.en.menus.main]]
+  name = "Projects"
   pageRef = "/projects"
   weight = 20
-[[menus.main]]
+[[languages.en.menus.main]]
+  name = "Blog"
+  url = "https://blog.hhsaez.com/"
+  weight = 30
+
+[[languages.es.menus.main]]
+  name = "Inicio"
+  pageRef = "/"
+  weight = 10
+[[languages.es.menus.main]]
+  name = "Proyectos"
+  pageRef = "/projects"
+  weight = 20
+[[languages.es.menus.main]]
   name = "Blog"
   url = "https://blog.hhsaez.com/"
   weight = 30
