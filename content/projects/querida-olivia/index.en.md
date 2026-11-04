@@ -7,8 +7,8 @@ categories = ["comics"]
 featureimage = "feature.jpg"
 
 [[links]]
-title = "Download PDF (Spanish)"
-url = "/projects/querida_olivia/querida_olivia.pdf"
+title = "Read"
+url = "https://comics.hhsaez.com/#/reader/querida_olivia/1"
 +++
 
 A short story about monsters, love and sacrifices.

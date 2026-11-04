@@ -7,8 +7,8 @@ categories = ["comics"]
 featureimage = "feature.jpg"
 
 [[links]]
-title = "Download PDF (Spanish)"
-url = "/projects/oam_01/oam_01.pdf"
+title = "Read"
+url = "https://comics.hhsaez.com/#/reader/offices_and_managers/1"
 +++
 
 "Offices and Managers Presenta: Falla critica" is a short comic book about five adventurers in an impossible situation.

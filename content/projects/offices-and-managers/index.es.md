@@ -7,8 +7,8 @@ categories = ["comics"]
 featureimage = "feature.jpg"
 
 [[links]]
-title = "Descargar PDF (en español)"
-url = "/projects/oam_01/oam_01.pdf"
+title = "Leer"
+url = "https://comics.hhsaez.com/#/reader/offices_and_managers/1"
 +++
 
 «Offices and Managers presenta: Falla crítica» es un cómic corto sobre cinco aventureros en una situación imposible.

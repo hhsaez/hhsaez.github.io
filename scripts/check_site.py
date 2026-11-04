@@ -171,10 +171,6 @@ for language, prefix in LANGUAGES.items():
 legacy_paths = [
     "projects/levoyage/index.html",
     "projects/levoyage/privacy.html",
-    "projects/jagerlied/jagerlied-00.pdf",
-    "projects/querida_olivia/querida_olivia.pdf",
-    "projects/setenta_y_siete/setenta_y_siete.pdf",
-    "projects/oam_01/oam_01.pdf",
 ]
 for path in legacy_paths:
     original = ROOT / "static" / path
@@ -185,6 +181,16 @@ for path in legacy_paths:
 if (PUBLIC / "CNAME").read_text().strip() != "www.hhsaez.com":
     errors.append("Custom domain CNAME is incorrect")
 
+removed_comic_pdfs = [
+    "projects/jagerlied/jagerlied-00.pdf",
+    "projects/querida_olivia/querida_olivia.pdf",
+    "projects/setenta_y_siete/setenta_y_siete.pdf",
+    "projects/oam_01/oam_01.pdf",
+]
+for path in removed_comic_pdfs:
+    if (ROOT / "static" / path).exists() or (PUBLIC / path).exists():
+        errors.append(f"Removed comic PDF still present: {path}")
+
 if errors:
     sys.exit("\n".join(sorted(set(errors))))
-print(f"Verified {project_count} projects in both languages, mosaics, archives, search, reciprocal switchers, local assets, and 6 legacy URLs.")
+print(f"Verified {project_count} projects in both languages, mosaics, archives, search, reciprocal switchers, local assets, and 2 legacy URLs.")

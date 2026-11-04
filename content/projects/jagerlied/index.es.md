@@ -8,8 +8,8 @@ featureimage = "feature.jpg"
 mosaicLarge = true
 
 [[links]]
-title = "Descargar PDF (en español)"
-url = "/projects/jagerlied/jagerlied-00.pdf"
+title = "Leer"
+url = "https://comics.hhsaez.com/#/reader/jagerlied-shadows/1"
 +++
 
 ¡El primer capítulo de mi novela gráfica ya está disponible en línea!

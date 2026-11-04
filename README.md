@@ -34,14 +34,14 @@ categories = ["comics"]
 featureimage = "feature.jpg"
 
 [[links]]
-title = "Read PDF (Spanish)"
-url = "/projects/example/example.pdf"
+title = "Read"
+url = "https://comics.hhsaez.com/#/reader/example/1"
 +++
 ```
 
 Add the description after the front matter, then `{{< project-links >}}` to render the links. Categories are `games`, `comics`, `programming`, and `robotics`. Keep `summary` and the description consistent when editing.
 
-Homepage images link directly to the first entry in `links` (the comic PDF, game, or project website). Set an optional top-level `primaryURL` to override that destination. The homepage presents all projects in one image-only mosaic, with accessible project labels and title tooltips. Set `mosaicLarge = true` to give a project a larger tile; Jägerlied, Crimild, and Le Voyage use this setting. The large images appear at varied positions among games, comics, and experiments. The final four small tiles form two balanced rows on desktop; the final tile fills the last phone row. Archive and category cards continue to open the detail pages and retain their titles and metadata.
+Homepage images link directly to the first entry in `links` (the comics reader, game, or project website). Set an optional top-level `primaryURL` to override that destination. The homepage presents all projects in one image-only mosaic, with accessible project labels and title tooltips. Set `mosaicLarge = true` to give a project a larger tile; Jägerlied, Crimild, and Le Voyage use this setting. The large images appear at varied positions among games, comics, and experiments. The final four small tiles form two balanced rows on desktop; the final tile fills the last phone row. Archive and category cards continue to open the detail pages and retain their titles and metadata.
 
 `date` uses the first day of the known release month for sorting; only the month and year are displayed. This does not assert an exact release day. `releaseMonth` records the original precision. Every project appears on the homepage, without category sections or More links. `params.homepage.mosaicOrder` in `hugo.toml` sets a deliberately mixed, stable order using project slugs. Projects not listed there are appended newest first, so new work is never omitted. CSS fills gaps between differently sized tiles. Projects is a separate chronological list of every project, newest first, grouped by year.
 
@@ -51,7 +51,7 @@ The bios are in `content/_index.en.md` and `content/_index.es.md`. Site settings
 
 English remains at `/`, and Spanish is under `/es/`. Project slugs and category identifiers stay the same in both languages; display names, descriptions, link labels, navigation, dates, search, and accessibility labels are localized. Proper project names and the tagline "Fly me to the Moon" remain unchanged.
 
-Keep matching `.en.md` and `.es.md` filenames together so Hugo connects equivalent pages. Translate prose, summaries, and link labels in both files. Keep dates, release months, category identifiers, image filenames, mosaic sizes, and project destinations consistent. Images are shared between translations. The PDFs and Le Voyage microsite remain at their original URLs and are not translated.
+Keep matching `.en.md` and `.es.md` filenames together so Hugo connects equivalent pages. Translate prose, summaries, and link labels in both files. Keep dates, release months, category identifiers, image filenames, mosaic sizes, and project destinations consistent. Images are shared between translations. Both languages link to the same comics reader destinations. The Le Voyage microsite remains at its original URLs and is not translated.
 
 The header's 🇬🇧 / 🇪🇸 switcher links equivalent pages, indicates the current language, and retains English / Español tooltips and screen-reader labels. It uses `layouts/partials/header/components/translations.html`; language flags are configured in `hugo.toml`. Untranslated system pages fall back to the language homepages. There is no automatic language redirection. Custom interface translations live in `i18n/en.toml` and `i18n/es.toml`; Blowfish supplies its own English and Spanish interface strings.
 
@@ -61,11 +61,11 @@ The site check verifies translation pairs, reciprocal switcher links, HTML langu
 
 ## Preserved content
 
-`static/` is copied directly to the site root. It retains the existing image, CSS, JavaScript, font, and PDF URLs. The old JavaScript project/social renderers have been removed; legacy JavaScript remains for Le Voyage.
+`static/` is copied directly to the site root. It retains the existing image, CSS, JavaScript, and font URLs. The old JavaScript project/social renderers have been removed; legacy JavaScript remains for Le Voyage.
 
 The Le Voyage microsite and privacy policy remain unchanged at `/projects/levoyage/index.html` and `/projects/levoyage/privacy.html`. Its new portfolio entry is at `/projects/le-voyage/` and links to the original microsite. The microsite retains its original desktop layout and third-party HTTP dependencies; modernizing it is separate work.
 
-Comic PDFs retain their `/projects/.../*.pdf` URLs. Moving comics to `comics.hhsaez.com` or creating additional game websites is deferred. External project URLs are retained from the original portfolio; some historical services or games may no longer be available.
+The four comics open directly in `comics.hhsaez.com`: Jägerlied uses `#/reader/jagerlied-shadows/1`, Querida Olivia uses `#/reader/querida_olivia/1`, Setenta y Siete uses `#/reader/setenta_y_siete/1`, and Offices and Managers uses `#/reader/offices_and_managers/1`. Project links are labeled Read / Leer. Local comic PDFs have been removed, and their former download URLs are no longer served. Build into a fresh directory or use `hugo --cleanDestinationDir` when reusing an existing output directory to remove stale PDF copies. Creating additional game websites is deferred. Other external project URLs are retained from the original portfolio; some historical services or games may no longer be available.
 
 The migration link audit returned HTTP 200 for 22 of the 23 external project links. DogFighter's original App Store link returned HTTP 404; it is retained for now. These are HTTP availability checks, not verification that historical games still run (Revancha Zombie, for example, requires Flash).
 

@@ -2,4 +2,4 @@
 title = "Comics"
 +++
 
-Graphic novels and short stories. Each project includes a link to read the comic as a PDF in Spanish.
+Graphic novels and short stories. Read them online in my comics reader.
